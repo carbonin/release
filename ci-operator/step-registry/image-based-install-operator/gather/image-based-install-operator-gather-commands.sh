@@ -26,6 +26,7 @@ oc get baremetalhost ostest-extraworker-0 -n openshift-machine-api -o yaml > ${H
 oc get dataimage ostest-extraworker-0 -n openshift-machine-api -o yaml > ${HUB_DIR}/dataimage.yaml
 oc get clusterdeployment ibi-cluster -n ibi-cluster -o yaml > ${HUB_DIR}/clusterdeployment.yaml
 oc get imageclusterinstall ibi-cluster -n ibi-cluster -o yaml > ${HUB_DIR}/imageclusterinstall.yaml
+oc get secrets -n ibi-cluster -o yaml > ${HUB_DIR}/secrets.yaml
 oc logs --tail=-1 -l app=image-based-install-operator -n image-based-install-operator -c manager > ${HUB_DIR}/image-based-install-operator-manager.log
 oc logs --tail=-1 -l app=image-based-install-operator -n image-based-install-operator -c server > ${HUB_DIR}/image-based-install-operator-server.log
 
